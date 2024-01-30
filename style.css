@@ -19,7 +19,8 @@
 
 }
   
-  /* Box sizing rules */
+/* CSS Reset */
+/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -30,11 +31,70 @@
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
-  -text-size-adjust: none;
+  text-size-adjust: none;
 }
 
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+body {
     background-color: var(--clr-vlight-gray);
     color: var(--clr-t-white);
     font-size: var(--fs-par);
@@ -43,24 +103,40 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    line-height: 1.6;
+    align-items: center;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-  }
+
 
 .card-wrapper{
     display: flex;
-    justify-content: center;
-    margin: 3rem;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 1rem;
+    max-width: 20rem;
 }
 
+.orange-card-borders {
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.vdark-cyan-card-borders {
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+
+
+
 .card {
-    max-width:20rem;
-    padding: 3.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 3rem;
+    row-gap: 1rem;
 }
 
 .card-color-orange {
@@ -75,15 +151,6 @@ img {
     background-color: var(--clr-vdark-cyan);
 }
 
-.orange-card-borders {
-    border-bottom-left-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
-}
-
-.vdark-cyan-card-borders {
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
 
 .card__car-text {
     font-family: var(--ff-deca);
@@ -99,9 +166,10 @@ img {
     text-transform: uppercase;
 }
 
-.card__button {
-    border: none;
-    padding: 1em 2em;
+.card__read-more {
+    text-decoration: none;
+    background-color: var(--clr-t-white);
+    padding: 0.5em 1.5em;
     border-radius: 1.5rem;
     font-family: var(--ff-deca);
 }
@@ -120,24 +188,30 @@ img {
 
 
 
-@media (max-width:960px){
+@media (min-width:64rem){
     .card-wrapper{
         display: flex;
-        flex-direction: column;
-        justify-items: center;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
+        margin: 1rem;
+        max-width: 52rem;
     }
 
     .orange-card-borders {
-        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: unset;
+        border-top-right-radius: unset;
     }
     
     .vdark-cyan-card-borders {
         border-bottom-right-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
-        border-top-right-radius: unset;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: unset;
+    }
+
+    .card__car-text {
+        padding-bottom: 4rem;
     }
 
 }
