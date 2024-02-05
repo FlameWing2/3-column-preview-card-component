@@ -92,7 +92,7 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
-
+/*Reset Finish*/
 
 body {
     background-color: var(--clr-vlight-gray);
@@ -172,6 +172,13 @@ body {
     padding: 0.5em 1.5em;
     border-radius: 1.5rem;
     font-family: var(--ff-deca);
+    border: solid 0.13rem transparent;
+}
+
+.card__read-more:hover {
+  border: solid 0.13rem  var(--clr-t-white);
+  background-color: transparent;
+  color: var(--clr-t-white);
 }
 
 .f-color-orange {
