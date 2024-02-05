@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository](https://github.com/FlameWing2/3-column-preview-card-component)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/3column-preview-card-component-g9atLBrtEm)
 - Live Site URL: [Live site](https://flamewing2.github.io/3-column-preview-card-component/)
 
 ## My process
